@@ -98,12 +98,41 @@
 <section class="contact" id="contato">
     <h2>Vamos elevar o nível da sua estratégia?</h2>
     <p>Preencha os dados abaixo e entraremos em contato.</p>
-    <form action="mailto:felipe@verticeestrategia.com" method="post" enctype="text/plain">
-        <input type="text" placeholder="Seu Nome" required>
-        <input type="email" placeholder="E-mail Corporativo" required>
-        <textarea rows="5" placeholder="Como podemos ajudar seu negócio?"></textarea>
+    <form id="contact-form" action="https://formspree.io/f/yourFormId" method="POST">
+        <input name="name" type="text" placeholder="Seu Nome" required>
+        <input name="email" type="email" placeholder="E-mail Corporativo" required>
+        <textarea name="message" rows="5" placeholder="Como podemos ajudar seu negócio?" required></textarea>
         <button type="submit" class="btn" style="border:none; cursor:pointer;">Enviar Mensagem</button>
+        <p id="contact-feedback" style="margin-top: 10px; font-size: 0.9rem; display: none;"></p>
     </form>
+    <script>
+        const form = document.getElementById('contact-form');
+        const feedback = document.getElementById('contact-feedback');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            feedback.style.display = 'none';
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                feedback.textContent = 'Mensagem enviada com sucesso! Obrigado.';
+                feedback.style.color = 'green';
+                feedback.style.display = 'block';
+                form.reset();
+            } else {
+                feedback.textContent = 'Ocorreu um erro ao enviar. Tente novamente mais tarde.';
+                feedback.style.color = 'red';
+                feedback.style.display = 'block';
+            }
+        });
+    </script>
 </section>
 
 <footer>
