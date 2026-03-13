@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vértice | Educação & Estratégia em TI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-deep: #0a1d37; /* Baseado na logo */
+            --ciano: #42e3f5;     /* O brilho da seta */
+            --prata: #b2bec3;     /* O tom metálico */
+            --branco: #ffffff;
+            --texto: #2d3436;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--texto); background: #f9f9f9; }
+
+        header {
+            background: var(--branco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo img { height: 100px; }
+    
+
+        nav a { margin-left: 20px; text-decoration: none; color: var(--azul-deep); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--ciano); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-deep) 0%, #1a3a5f 100%);
+            color: var(--branco);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn { background: var(--ciano); color: var(--azul-deep); padding: 15px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: inline-block; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(66, 227, 245, 0.4); }
+
+        /* Serviços */
+        .services { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--branco); padding: 40px; border-radius: 10px; border-bottom: 4px solid var(--azul-deep); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--azul-deep); margin-bottom: 15px; }
+        .card p { font-size: 0.95rem; color: #636e72; }
+
+        /* Contato */
+        .contact { background: #eee; padding: 80px 5%; text-align: center; }
+        form { max-width: 500px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        
+        footer { background: var(--azul-deep); color: var(--branco); text-align: center; padding: 20px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="LOGO.jpg" alt="Vértice Logo">
+    </div>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Transforme Tecnologia em Valor Estratégico</h1>
+    <p>A Vértice alinha as vertentes de TI — como IA e Transformação Digital — aos objetivos reais do seu negócio por meio de consultoria e educação executiva.</p>
+    <a href="#contato" class="btn">Solicitar Diagnóstico</a>
+</section>
+
+<section class="services" id="servicos">
+    <div class="card">
+        <h3>Consultoria Estratégica</h3>
+        <p>Desenho de roadmaps tecnológicos que impulsionam o crescimento e a eficiência operacional, garantindo que a TI não seja apenas um custo, mas um motor de lucro.</p>
+    </div>
+    <div class="card">
+        <h3>Educação Executiva</h3>
+        <p>Capacitação para líderes e gestores sobre como governar a tecnologia e integrar ferramentas emergentes na cultura organizacional.</p>
+    </div>
+    <div class="card">
+        <h3>TI & Inovação (IA/TD)</h3>
+        <p>Implementação prática de Inteligência Artificial e Transformação Digital com foco em resultados mensuráveis e suporte sustentável.</p>
+    </div>
+</section>
+
+<section class="contact" id="contato">
+    <h2>Vamos elevar o nível da sua estratégia?</h2>
+    <p>Preencha os dados abaixo e entraremos em contato.</p>
+    <form action="mailto:felipe@verticeestrategia.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="Seu Nome" required>
+        <input type="email" placeholder="E-mail Corporativo" required>
+        <textarea rows="5" placeholder="Como podemos ajudar seu negócio?"></textarea>
+        <button type="submit" class="btn" style="border:none; cursor:pointer;">Enviar Mensagem</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2026 Vértice - Educação & Estratégia. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
